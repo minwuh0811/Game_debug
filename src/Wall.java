@@ -23,7 +23,7 @@ public class Wall extends GameObject implements Entity {                //Ärver
             e.printStackTrace();                                        //Skriv ut felet
         }
         random = new Random();                                          //Skapa ett nytt objekt som ska hantera random
-        rand = random.nextInt(10);                                      //Slumpa ett tal mellan 0-9, (det är här första hålet i väggen är)
+        rand = random.nextInt(9);                                      //Slumpa ett tal mellan 0-9, (det är här första hålet i väggen är)
     }
 
     @Override
@@ -32,7 +32,7 @@ public class Wall extends GameObject implements Entity {                //Ärver
 
         if(y>=Game.HEIGHT){                                             //Om objektet har kommit längst ner i bild, starta om från början
             y=0;                                                        //Sätt koordinaten på objektet till 0 (överst i bild)
-            rand = random.nextInt(10);                                  //Slumpa ett nytt tal (nytt hål i väggen)
+            rand = random.nextInt(9);                                  //Slumpa ett nytt tal (nytt hål i väggen)
             setVelY(velY+0.5);                                          //Öka hastigheten till nästa varv (så att spelet blir svårare och svårare)
             Counter.count++;                                            //Öka räknare med ett (håller räkningen på hur många varv vi har klarat)
         }
